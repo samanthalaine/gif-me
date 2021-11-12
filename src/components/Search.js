@@ -2,9 +2,9 @@ import React from 'react'
 
 function Search() {
     return (
-        <div>
+        <h1 className="text-5xl">
             hello
-        </div>
+        </h1>
     )
 }
 

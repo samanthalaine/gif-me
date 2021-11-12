@@ -21,14 +21,18 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div className="bg-gray-900">
+    <div className="bg-gray-900">
+      
+      
         <Navbar />
-        <MainContent gifs={gifs} />
-      </div>
-    </BrowserRouter>
+        
+        <Routes>
+        <Route path="/" exact element={<MainContent gifs={gifs} />} />
+        <Route path="search/*" element={<Search />} />
+        </Routes>
+      
+    </div>
   );
 }
-
 
 export default App;
