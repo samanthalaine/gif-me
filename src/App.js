@@ -3,7 +3,9 @@ import Navbar from "./components/Navbar";
 import { Routes, Route, Link } from "react-router-dom";
 import Search from "./components/Search";
 import Upload from "./components/Upload";
+import CardDetail from "./components/CardDetail";
 import MainContent from "./components/MainContent";
+
 
 function App() {
   const [gifs, setGifs] = useState([]);
@@ -28,6 +30,7 @@ function App() {
         <Route path="/" exact element={<MainContent gifs={gifs} />} />
         <Route path="search/*" element={<Search />} />
         <Route path="upload/*" element={<Upload />} />
+        <Route path="/gif/:id*" element={<CardDetail/>} />
       </Routes>
     </div>
   );

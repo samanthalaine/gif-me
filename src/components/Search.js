@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react";
+import GifCard from "./GifCard"
 
 const Search = () => {
     const [search, setSearch] = useState("");
