@@ -3,7 +3,7 @@ import React from 'react'
 function GifCard({gif}) {
     return (
         <div class="max-w-sm rounded overflow-hidden shadow-lg">
-        <img src={gif.images.fixed_height.url} alt="" className="w-full"/>
+        <img class="w-full" src={gif.images.fixed_width.url} alt="" className="w-full"/>
         <div className="px-6 py-3">
         <div className="font-bold text-blue-700 text-xl mb-2">
           {gif.title}

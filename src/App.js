@@ -6,7 +6,7 @@ function App() {
 
   useEffect(() => {
     const fetchGifs = async () =>{
-      const res = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=21&rating=g`)
+      const res = await fetch(`https://api.giphy.com/v1/gifs/trending?api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=21&rating=pg`)
       const data = await res.json()
       setGifs(data.data)
       console.log(data.data)
@@ -16,8 +16,8 @@ function App() {
 
 
   return (
-    <div className="container mx-auto">
-      <div className="grid grid-cols-3 gap-4">
+    <div className="container mx-auto mt-10 mb-10">
+      <div className="grid grid-cols-3 gap-7">
       {gifs.map((gif)=>(
         <GifCard gif={gif}/>
       ))}
