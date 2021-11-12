@@ -28,14 +28,15 @@ const Search = () => {
 
   return (
     <div>
-      <div class="w-full max-w-sm">
+      <div class="w-full max-w-sm ">
         <div class="flex items-center py-2">
+          
           <input 
             type="text" 
             placeholder="Search GIFs"
             value={search}
             onChange={(e)=>setSearch(e.target.value)}
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline " 
           />
           <button 
           onClick={searchGif}
@@ -53,7 +54,7 @@ const Search = () => {
               </div>
             </div>
           ) : (
-            <div className="sm:grid grid-cols-1 md:grid grid-cols-3 gap-7">
+            <div className="sm:grid grid-cols-1 md:grid grid-cols-3 gap-7 bg-gray-900">
               {
                 gifs.map((gif)=>{
                   return (
