@@ -17,9 +17,9 @@ function App() {
 
 
   return (
-    <div>
+    <div className="bg-gray-900">
       <Navbar/>
-    <div className="container mx-auto mt-10 mb-10">
+    <div className="container mx-auto mt-10">
       <div className="grid grid-cols-3 gap-7">
       {gifs.map((gif)=>(
         <GifCard gif={gif}/>
