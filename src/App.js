@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import GifCard from "./components/GifCard";
 import Navbar from "./components/Navbar";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Search from "./components/Search";
 import MainContent from "./components/MainContent";
 
@@ -21,16 +20,13 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-gray-900">
-      
-      
-        <Navbar />
-        
-        <Routes>
+    <div className="">
+      <Navbar />
+
+      <Routes>
         <Route path="/" exact element={<MainContent gifs={gifs} />} />
         <Route path="search/*" element={<Search />} />
-        </Routes>
-      
+      </Routes>
     </div>
   );
 }
