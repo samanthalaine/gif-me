@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import { Routes, Route, Link } from "react-router-dom";
 import Search from "./components/Search";
+import Upload from "./components/Upload";
 import MainContent from "./components/MainContent";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<MainContent gifs={gifs} />} />
         <Route path="search/*" element={<Search />} />
+        <Route path="upload/*" element={<Upload />} />
       </Routes>
     </div>
   );
