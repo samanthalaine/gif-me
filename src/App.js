@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import GifCard from './components/GifCard'
+import Navbar from './components/Navbar'
 
 function App() {
   const [gifs, setGifs] = useState([])
@@ -16,12 +17,15 @@ function App() {
 
 
   return (
+    <div>
+      <Navbar/>
     <div className="container mx-auto mt-10 mb-10">
       <div className="grid grid-cols-3 gap-7">
       {gifs.map((gif)=>(
         <GifCard gif={gif}/>
       ))}
       </div>
+    </div>
     </div>
   );
 }
