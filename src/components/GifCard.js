@@ -27,10 +27,6 @@ function GifCard({ gif }) {
             <strong>Username: </strong>
             {gif.username !== "" ? gif.username : "Unknown"}
           </li>
-          <li>
-            <strong>Rating: </strong>
-            {gif.rating}
-          </li>
         </ul>
       </div>
       <div className="px-6 py-3 bg-white">
