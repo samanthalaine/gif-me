@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Moment from 'moment';
 
 function CardDetail() {
   let { id } = useParams();
   const [details, setDetails] = useState({});
-  let date = new Date(details.import_datetime);
-  let formatDate = date.toLocaleString("en-us");
-  formatDate = formatDate.split(",")[0];
-  console.log(formatDate);
+  
+  let date = Moment(details.import_datetime).format('MM/DD/YYYY, hh:mm:ss')
+  date = date.split(",")[0]
+  console.log(date)
 
 
   useEffect(() => {
@@ -43,7 +44,7 @@ function CardDetail() {
               </li>
               <li >
                 <strong className="font-bold text-purple-500">Date Posted: </strong>
-                {formatDate}
+                {date}
               </li>
               <li>
                 <strong className="font-bold text-purple-500">Username: </strong>

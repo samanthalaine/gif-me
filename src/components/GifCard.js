@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Moment from 'moment';
 
 
 function GifCard({ gif }) {
-  let date = new Date(gif.import_datetime);
-  let formatDate = date.toLocaleString("en-us");
-  //date object example: (10/21/2021, 3:58:47 PM)
-  //splits date object into array, then returns first element of that array
-  formatDate = formatDate.split(",")[0];
-  console.log(formatDate);
+
+  // //date object example: (10/21/2021, 3:58:47 PM)
+  // //splits date object into array, then returns first element of that array
+  let date = Moment(gif.import_datetime).format('MM/DD/YYYY, hh:mm:ss')
+  date = date.split(",")[0]
+  console.log(date)
 
   return (
     <Link class="max-w-sm rounded overflow-hidden shadow-lg bg-white" to={`/gif/${gif.id}`}>
@@ -32,7 +33,7 @@ function GifCard({ gif }) {
       </div>
       <div className="px-6 py-3 bg-white">
         <span className="inline-block bg-green-300 rounded full px-3 py-1 text-sm font-semibold text-gray-800 mr-2">
-          Posted on: {formatDate}
+          Date Posted: {date}
         </span>
       </div>
     </div>
