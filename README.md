@@ -6,7 +6,10 @@ This project is an update of my phase 2 project for Flatiron: https://github.com
 
 ## About
 
-This site allows you to view trending gifs, search for gifs, and upload your own gifs. You can click on each gif to view more details. It utilizes the GIPHY API to render data. Uploaded gifs are stored in Cloudinary.    
+This site allows you to view trending gifs, search for gifs, and upload your own gifs. You can click on each gif to view more details. It utilizes the GIPHY API to render data. Uploaded gifs are stored in Cloudinary. 
+
+## Live Site
+https://gifme.netlify.app/
 
 ## Technologies
 - React
