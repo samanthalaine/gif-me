@@ -11,20 +11,21 @@ function GifCard({ gif }) {
   console.log(formatDate);
 
   return (
-    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-      <Link to={`/gif/${gif.id}`}>
+    <Link class="max-w-sm rounded overflow-hidden shadow-lg bg-white" to={`/gif/${gif.id}`}>
+    <div >
+      
         <img
           class="w-full"
           src={gif.images.fixed_width.url}
           alt=""
           className="w-full"
         />
-      </Link>
+      
       <div className="px-6 py-3 bg-white">
         <div className="font-bold text-blue-700 text-xl mb-2">{gif.title}</div>
         <ul>
           <li>
-            <strong>Username: </strong>
+            <strong>Posted by: </strong>
             {gif.username !== "" ? gif.username : "Unknown"}
           </li>
         </ul>
@@ -35,6 +36,7 @@ function GifCard({ gif }) {
         </span>
       </div>
     </div>
+    </Link>
   );
 }
 
