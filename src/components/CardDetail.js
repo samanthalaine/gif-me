@@ -1,69 +1,87 @@
-import React, {useEffect, useState} from "react"
-import {useParams} from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 function CardDetail() {
-    let {id} = useParams()
-     const [details, setDetails] = useState({})
-     console.log(details.user)
-     
-     
-    
-        useEffect(() => {
-            setTimeout(() => fetchItem(), 300)
+  let { id } = useParams();
+  const [details, setDetails] = useState({});
+  let date = new Date(details.import_datetime);
+  let formatDate = date.toLocaleString("en-us");
+  formatDate = formatDate.split(",")[0];
+  console.log(formatDate);
+
+
+  useEffect(() => {
+    setTimeout(() => fetchItem(), 300);
+  }, []);
+  const fetchItem = async () => {
+    const fetchItem = await fetch(
+      `https://api.giphy.com/v1/gifs/${id}?api_key=${process.env.REACT_APP_GIPHY_KEY}`
+    );
+    const Item = await fetchItem.json();
+    setDetails(Item.data);
+  };
+  if (Object.keys(details).length !== 0) {
+    return (
+      <div className="">
+        <div className="max-w-sm px-6 py-3 rounded overflow-hidden shadow-lg">
+          <div
+            avatar={
+              <div
+                alt="?"
+                src={details.user ? details.user.avatar_url : "Unknown"}
+              />
+            }
+            action={<button aria-label="settings"></button>}
+            title={details.title}
+            subheader={details.trending_datetime}
+          />
+          <img src={details.images.original.url} title="gif" />
+          <div>
+            <ul className="">
+              <li className="text-xl font-bold text-blue-800">
+                {details.title}
+              </li>
+              <li >
+                <strong className="font-bold text-purple-500">Date Posted: </strong>
+                {formatDate}
+              </li>
+              <li>
+                <strong className="font-bold text-purple-500">Username: </strong>
+                {details.username === "" ? "Unknown" : details.username }
+              </li>
+              <li>
+                <strong className="font-bold text-purple-500">Type: </strong>
+                {details.type}
+              </li>
+              <li>
+                <strong className="font-bold text-purple-500">Rating: </strong>
+                {details.rating.toUpperCase()}
+              </li>
+              <li>
+                <strong className="font-bold text-purple-500">Source: </strong>
+                {details.source === "" ? "Unknown" : <a className="text-blue-600" href={details.source}>{details.source}</a>}
+              </li>
             
-        }, [])
-        const fetchItem = async () => {
-            const fetchItem = await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${process.env.REACT_APP_GIPHY_KEY}`)
-            const Item = await fetchItem.json(); 
-            setDetails(Item.data)    
-        }   
-        if(Object.keys(details).length !== 0){
-            return(
-                <div>
-                    <div >
-               <div
-                 avatar={
-                     <div alt="?" src={details.user ? details.user.avatar_url: "Unknown"} />
-                 }
-                 action={
-                   <button aria-label="settings">
-                   </button>
-                 }
-                 title={details.title}
-                 subheader={details.trending_datetime}
-               />
-               <img
-                 
-                 src={details.images.original.url}
-                 title="gif"
-               />
-               <div>
-                 <div className="cardDetails" variant="body2" color="textSecondary" component="p">
-                   Username:{details.username}
-                   <br></br>
-                   Type:{details.type}
-                   <br></br>
-                   Rating:{details.rating}
-                 </div>
-               </div>
-               </div>
-                </div>
-             )
-        }
-        else{
-            return(
-                <div class="flex justify-center items-center">
-                <div
-                  class="
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div class="flex justify-center items-center">
+        <div
+          class="
                     animate-spin
                     rounded-full
                     h-32
                     w-32
                     border-t-2 border-b-2 border-purple-500
                   "
-                ></div>
-              </div>)
-        }
+        ></div>
+      </div>
+    );
+  }
 }
 
-export default CardDetail
+export default CardDetail;
