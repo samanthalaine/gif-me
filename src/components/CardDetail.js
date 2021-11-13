@@ -60,7 +60,7 @@ function CardDetail() {
               </li>
               <li>
                 <strong className="font-bold text-purple-500">Source: </strong>
-                {details.source === "" ? "Unknown" : <a className="text-blue-600" href={details.source}>{details.source}</a>}
+                {details.source === "" ? "Unknown" : <a className="underline text-blue-600" href={details.source}>{details.source}</a>}
               </li>
             
             </ul>
