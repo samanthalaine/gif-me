@@ -5,7 +5,7 @@ function MainContent({gifs}) {
     return (
       <div className="bg-gray-900">
         <div className="container mx-auto ">
-          <div className="grid grid-cols-3 gap-7">
+          <div className="sm:grid grid-cols-1 md:grid grid-cols-3 gap-7">
             {gifs.map((gif) => (
               <GifCard gif={gif} />
             ))}

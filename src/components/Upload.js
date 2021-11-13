@@ -45,9 +45,9 @@ function Upload() {
           Loading...
         </h1>
        : 
-       <div className="grid grid-cols-3 gap-4">{gif.map((gif) => (
+       <div className="sm:grid grid-cols-1 md:grid grid-cols-3 gap-7">{gif.map((gif) => (
           <img
-            className="max-w-sm m-8 rounded overflow-hidden shadow-lg bg-white"
+            className="max-w-sm sm:mb-1 md:m-8 rounded overflow-hidden shadow-lg bg-white"
             src={gif.secure_url}
           />
         ))
