@@ -54,12 +54,12 @@ const Search = () => {
               </div>
             </div>
           ) : (
-            <div className="sm:grid grid-cols-1 md:grid grid-cols-3 gap-7 bg-gray-900">
+            <div className="sm:grid grid-cols-1 md:grid grid-cols-3 gap-5">
               {
                 gifs.map((gif)=>{
                   return (
                     <div >
-                      <img src={gif}/>  
+                      <img class="rounded overflow-hidden shadow-lg" src={gif}/>  
                     </div>
                   )
                 })
