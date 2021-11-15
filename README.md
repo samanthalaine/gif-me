@@ -2,7 +2,7 @@
 
 This project is an update of my phase 2 project for Flatiron: https://github.com/samanthalaine/gifhub
 
-![homepage](https://media.discordapp.net/attachments/887887430475186176/909670432863580160/unknown.png?width=1770&height=864)
+![homepage](https://media.discordapp.net/attachments/887887430475186176/909671684120916028/unknown.png?width=1776&height=864)
 
 ## About
 
