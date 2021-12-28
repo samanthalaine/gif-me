@@ -6,7 +6,7 @@ const Search = () => {
     const [search, setSearch] = useState("");
     const [gifs, setGifs] = useState([]);
     const [loadingState, setLoadingState] = useState(false);
-    const GIPHY_API = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=20&offset=0&q=`;
+    const GIPHY_API = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=50&offset=0&q=`;
   
   const searchGif = () => {
     if(search.length > 0){
